@@ -1,0 +1,15 @@
+Clear Empty Set
+
+This application removes empty sets from Alma that were created via API.
+
+A valid API-Key must be entered in the config.ini file. This key needs Configuration (Read/Write) access to an Alma instance.
+
+Put a list of set names from Alma into a text file. Each set name must be on its own line.
+
+After launching ClearEmptySet put the name of your text file listing set names into the textbox and hit enter. The application will now check the set size via API and delete sets with zero items. Only sets created via API can be deleted by this program.
+
+Output will be in the following files created in the same directory as the application:
+{filename}_sets_deleted.txt: Set names that had zero members, were created via, and have been deleted.
+{filename}_sets_not_deleted.txt: The set name was not deleted for any reason, including not created via API.
+{filename}_sets_not_found.txt: Set names that were not found in Alma.
+{filename}_sets_with_members.txt: Set names that contain members and the number of members in the set.
